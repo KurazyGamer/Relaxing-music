@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>My Relaxing Music</title>
+        <style>
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                background-color: green;
+            }
+            /*Style the player container*/
+            #player{
+                background-color: black;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+            /*Style the audio controls (buttons)*/
+            button {
+                margin: 5px;
+                padding: 10px 15px;
+                border: none;
+                border-radius: #008CbA;
+                color: black;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>My Relaxing Music</h1>
+        <p>My relaxing music</p>
+        <div id="player">
+            <audio id="audio" src="./music.mp3"></audio>
+
+            <button onclick="playAudio()">Play</button>
+            <button onclick="pauseAudio()">Pause</button>
+            <button onclick="stopAudio()">Stop</button>
+            
+        </div>
+        <script>
+            var audio = document.getElementById("audio");
+
+            function playAudio(){
+                audio.play();
+            }
+            function pauseAudio(){
+                audio.pause();
+            }
+            function stopAudio(){
+                audio.pause();
+                audio.currentTime = 0;
+            }
+            
+        </script>
+        </body>
+</html>
